@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@700&family=Dosis:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@550&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    
+    
+}
+.navbarHeading{
+    font-family: 'Advent Pro',cursive;
+    display: flex; 
+    font-size:50px;
+}
+
+.hero{
+    width: 80%;
+    margin: auto;
+    
+}
+
+.navbar{
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    
+}
+
+ul{
+flex:1;    
+text-align: right;
+    
+}
+
+ul li{
+    
+    display: inline-block;
+    list-style: none;
+    margin: 0 25px;
+     
+    
+}
+ul li a{
+    font-family: 'Dosis',sans-serif;
+    text-decoration: none!important;
+    color: #000;
+    padding: 0 10px;
+    position: relative;
+   
+}
+ul li a::after {
+    content: '';
+    width: 0%;
+    height: 10px;
+    background: #f14a60;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -55px;
+    transition:0.5s;
+}
+ul li a:hover::after {
+    width: 100%;
+     
+}
+.navbar-icons img{
+    height: 25px;
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+.navbar-icons {
+    margin-left: 40px;
+}
+.banner{
+    display: flex;
+    margin-top: 80px;
+}
+.left-column,.right-column{
+    flex-basis: 50%;
+    
+}
+.record-button{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    background-image: linear-gradient(#aaffa9,#11ffbd);
+    text-align: center;
+     display: inline-block;
+    transition:0.5s;
+    
+}
+.record-button:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em; /* Adjusts for spacing */
+}
+.record-button a {  
+  color: white;
+  font-size: 1em;
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+  transition:0.5s;
+}
+
+.record-button:hover {
+     -webkit-transform:scale(1.3, 1.3);
+    
+    
+}
+.record-button:hover  a{
+    color: dimgray;
+    
+    
+}
+
+.heart{
+    display: none;
+    height: 70px;
+    width: 70px;
+    background: #f20044;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    transform: rotate(-45deg);
+    box-shadow: -10px 10px 90px #f20044;
+    animation: heart 0.6s linear infinite;
+}
+.heart:before{
+    content: '';
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    background: #f20044;
+    top:-50%;
+    border-radius: 50px;
+    box-shadow: -10px 10px 90px #f20044;
+    
+}
+.heart:after{
+    content: '';
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    background: #f20044;
+    right:-50%;
+    border-radius: 50px;
+    box-shadow: -10px 10px 90px #f20044;
+    
+}
+
+@keyframes heart{
+    0%{
+        transform: rotate(-45deg) scale(1.07); 
+    }
+     80%{
+        transform: rotate(-45deg) scale(1.0); 
+    }
+     100%{
+        transform: rotate(-45deg) scale(0.8); 
+    }
+    
+}
+.search-box{
+    width: 45%;
+    display: flex;
+    padding-bottom: 3px;
+    border-bottom: 1px;
+    border-bottom: 1px solid #ddd;
+    margin: 10px 0 30px;
+}
+.search-box img{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+
+.search-box input{
+    width: 100%;
+    margin-left: 15px;
+    font: 17px;
+    border: 0;
+    outline: none;
+    
+}
+
+.left-column h1{
+    font-family: 'Dosis',sans-serif;
+    font-size: 65;
+}
+.left-column h3{
+    font-family: 'Dosis',sans-serif;
+    font-size: 30px;
+    margin-left: 10px;
+}
+.left-column p{
+    margin-left: 10px;
+    font-family: 'Dosis',sans-serif;
+    font-size: 14px;
+    color: #999;
+    margin: 25px 0;
+    
+}
+
+.btn button{
+    font-family: 'Dosis',sans-serif;
+    padding: 7px 30px;
+    margin-right: 15px;
+    outline: none;
+    border: 1px solid #fb7381;
+    border-radius: 20px;
+    cursor: pointer;
+    color:#fb7381;
+    background: transparent;
+}
+
+.btn .primary-btn{
+    background: linear-gradient(#fb7381,#f14a60);
+    box-shadow: 0 2px 15px rgba(248,38,103,0.26);
+    color: #fff;
+    
+}
+
+.record-message{
+    font-family: 'Dosis',sans-serif;
+    font-size: 14px;
+    color: #999;
+    margin: 25px 0;
+}

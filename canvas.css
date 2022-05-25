@@ -1,0 +1,16 @@
+canvas { 
+		display: inline-block; 
+		background: white; 
+		width: 45%;
+		height: 25%;
+		
+	}
+
+#canvas-holder {
+		height: 80%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+	}
