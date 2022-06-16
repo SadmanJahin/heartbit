@@ -25,6 +25,8 @@ function countDown()
     startingTime-=1;
     if(startingTime==-1)
         {
+            document.getElementById("record-panel").style.display="none";
+            document.getElementById("processing").style.display="block";
             stopRecording();
             clearInterval(recordInterval);
         }
@@ -172,22 +174,32 @@ var datetime = currentdate.getDate() + "_"
 		  xhr.onload=function(e) {
 		      if(this.readyState === 4) {
 		          console.log("Server returned: ",e.target.responseText);
-				  heart_condition= e.target.responseText;
-				  if(heart_condition == -1)
-				  {
-					  document.getElementById("heart-div").style.display="none";
-					  document.getElementById("heart-result").style.display="block";
-				  }
+                  document.getElementById("processing").style.display="none";
+                  document.getElementById("result").style.display="block";
+                  if(e.target.responseText=="normal")
+                      {
+                        document.getElementById("result-icon1").style.display="block";
+                        document.getElementById("result-text").innerHTML="Your Heartbeat Seems Fine.";  
+                      }
+                  else if (e.target.responseText=="abnormal")
+                      {
+                        document.getElementById("result-icon2").style.display="block";
+                          document.getElementById("result-text").innerHTML="You may have possibility of heart disease."; 
+                      }
+                  else{
+                      alert(e.target.responseText)
+                  }
+                  
 		      }
 		  };
 		  var fd=new FormData();
           fd.append("title",filename);
 		  fd.append("file",blob, filename);
-		  xhr.open("POST","http://192.168.0.13:8000/api/analyseHeartbeat/",true);
+		  xhr.open("POST","https://heartbeat-classification-rest.herokuapp.com/api/analyseHeartbeat/",true);
           //alert(filename)
 		  xhr.send(fd);
 	}
-	//alert(link);
+	
 
     uploadToServer();
 }
